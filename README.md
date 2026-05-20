@@ -26,31 +26,47 @@ The draft unsolicited proposal is for CEO review only and must be reviewed by co
 
 1. Create a new Replit project.
 2. Choose **Python** as the template.
-3. Upload these project files into Replit:
+3. Upload or import these top-level project files into Replit:
+   - `main.py`
    - `app.py`
    - `p3_agent_system.py`
    - `requirements.txt`
    - `.replit`
    - `README.md`
    - `outputs/.gitkeep`
-4. In Replit, open the **Secrets** or **Environment Variables** panel.
-5. Add the API keys you want to use:
+4. Confirm these files are at the project root, not inside a nested folder.
+5. In Replit, open the **Secrets** or **Environment Variables** panel.
+6. Add the API keys you want to use:
    - `OPENAI_API_KEY`
    - `TAVILY_API_KEY` or `PERPLEXITY_API_KEY`
    - `ANTHROPIC_API_KEY` only if you later add Anthropic support
-6. Optional: add `P3_SEARCH_PROVIDER` with one of:
+7. Optional: add `P3_SEARCH_PROVIDER` with one of:
    - `auto`
    - `tavily`
    - `perplexity`
    - `serpapi`
    - `bing`
    - `none`
-7. Click **Run**.
-8. Replit will install packages from `requirements.txt` and start the FastAPI app.
-9. Open the web preview.
-10. Click **Run University P3 Agent**.
+8. Click **Run**.
+9. Replit will install packages from `requirements.txt` and run `python main.py`.
+10. Open the web preview.
+11. Click **Run University P3 Agent**.
 
 No Docker is required. No AWS is required.
+
+## Replit Run Command
+
+The `.replit` file is already configured as:
+
+```text
+run = "python main.py"
+```
+
+If Replit asks for a run command manually, enter:
+
+```bash
+python main.py
+```
 
 ## If You Do Not Add Search Keys
 
@@ -101,7 +117,7 @@ pip install -r requirements.txt
 Start the app:
 
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
+python main.py
 ```
 
 Open:
